@@ -6,7 +6,7 @@
 
 Docker container for 13ft https://github.com/wasi-master/13ft
 
-Changes:
+##Changes:
 
 Changed from using /article http post to /link http get, when inside a page and click any link, it will try to feed it back into this container and load it instead of directly loading the page based on url.
 
@@ -14,16 +14,16 @@ added proxy support to the requests (tested working with ubuntu's squid proxy)
 
 added garbage collection and setted port to 8083 by default, fixed the requirements by adding requests
 
-Environment variables:
+##Environment variables:
 | Env | Default | Example | Description |
 | - | - | - | - |
 | `PROXY` | - | `192.168.1.100:8123` | Put the URL:port of your proxy |
 | `HOSTNAME` | - | `host.myserver.com` | Put the domain/ip of this container so that link redirect works |
 
-
+##Docker Command
 <pre>docker run -p 8084:8084 -e PROXY="a" -e HOSTNAME="a"  karmarcharger/13ft-proxy-march:latest</pre>
 
-Docker compose
+##Docker compose
 <pre>
 version: '3.3'
 services:
