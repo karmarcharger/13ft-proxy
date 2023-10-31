@@ -17,8 +17,8 @@ added garbage collection and setted port to 8083 by default, fixed the requireme
 ## Environment variables:
 | Env | Default | Example | Description |
 | - | - | - | - |
-| `PROXY` | - | `192.168.1.100:8123` | Put the URL:port of your proxy |
-| `HOSTNAME` | - | `host.myserver.com` | Put the domain/ip of this container so that link redirect works |
+| `PROXY` | - | `192.168.1.100:8123` | Put the URL:port of your proxy **optional|
+| `HOSTNAME` | - | `host.myserver.com` | Put the domain/ip of this container so that link redirect works  **required|
 
 ## Docker Command
 <pre>docker run -p 8084:8084 -e PROXY="a" -e HOSTNAME="a"  karmarcharger/13ft-proxy-march:latest</pre>
