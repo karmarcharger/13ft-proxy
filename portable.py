@@ -2,6 +2,7 @@ import flask
 import requests
 import os
 from flask import request
+import gc
 
 app = flask.Flask(__name__)
 #os.environ["PROXY"] = "" #for debugging when not in docker
@@ -161,8 +162,10 @@ function isValidUrlComponent(url) {
 
         </script>
         """
+        gc.collect()
         return response_text
     except requests.exceptions.RequestException as e:
+        gc.collect()
         return str(e), 400
 
 @app.route("/")
