@@ -21,7 +21,7 @@ added garbage collection and setted port to 8083 by default, fixed the requireme
 | `HOSTNAME` | - | `host.myserver.com` | Put the domain/ip of this container so that link redirect works  **required|
 
 ## Docker Command
-<pre>docker run -p 8084:8084 -e PROXY="a" -e HOSTNAME="a"  karmarcharger/13ft-proxy-march:latest</pre>
+<pre>docker run -p 8084:8084 -e PROXY="192.168.1.100:8123" -e HOSTNAME="host.myserver.com"  karmarcharger/13ft-proxy-march:latest</pre>
 
 ## Docker compose
 <pre>
@@ -31,8 +31,8 @@ services:
         ports:
             - '8084:8084'
         environment:
-            - PROXY=a
-            - HOSTNAME=a
+            - PROXY=192.168.1.100:8123
+            - HOSTNAME=host.myserver.com
         image: 'karmarcharger/13ft-proxy-march:latest'
 </pre>
 
